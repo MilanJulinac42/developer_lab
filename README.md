@@ -12,7 +12,7 @@ Modern landing page za Data Science edukativnu platformu izgrađen sa Next.js 15
 - 🎯 Sticky navigation
 - 💳 3 course cards sa pricing
 - ⭐ Testimonials sekcija
-- 🚀 Optimizovano za performance
+- 🚀 Optimizovano za performancea
 
 ## 🎨 Color Palette
 
