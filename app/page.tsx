@@ -42,6 +42,11 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl"></div>
 
+        {/* Floating animated shapes */}
+        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-blue-400/20 rounded-lg animate-float"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-cyan-400/10 rounded-full animate-pulse-slow"></div>
+        <div className="absolute bottom-32 right-40 w-12 h-12 border-2 border-cyan-400/20 rounded-full animate-wiggle"></div>
+
         {/* Subtle dots pattern */}
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: 'radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
@@ -154,9 +159,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Wavy Divider */}
+      <div className="relative h-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+        <svg className="absolute bottom-0 w-full h-24 text-blue-50" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 0C240 53.3 480 80 720 80C960 80 1200 53.3 1440 0V120H0V0Z" fill="currentColor"/>
+        </svg>
+      </div>
+
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container-custom">
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+        {/* Decorative circles */}
+        <div className="absolute top-10 right-20 w-32 h-32 border-4 border-blue-200 rounded-full opacity-20"></div>
+        <div className="absolute bottom-20 left-10 w-24 h-24 border-4 border-cyan-200 rounded-full opacity-20"></div>
+
+        {/* Floating shapes */}
+        <div className="absolute top-40 left-40 w-16 h-16 bg-blue-200/30 rounded-2xl rotate-12 animate-bounce" style={{animationDuration: '3s'}}></div>
+        <div className="absolute bottom-40 right-60 w-20 h-20 bg-cyan-200/30 rounded-full animate-pulse" style={{animationDuration: '4s'}}></div>
+
+        <div className="container-custom relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
               Zašto Developer.Lab?
@@ -209,9 +229,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Curved Divider */}
+      <div className="relative h-32">
+        <svg className="absolute top-0 w-full h-32 text-white" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 0L60 13.3C120 26.7 240 53.3 360 64C480 74.7 600 69.3 720 58.7C840 48 960 32 1080 26.7C1200 21.3 1320 26.7 1380 29.3L1440 32V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="currentColor"/>
+        </svg>
+      </div>
+
       {/* Tech Stack Section */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
+      <section className="py-20 bg-gradient-to-br from-blue-100/50 via-white to-cyan-100/50 relative overflow-hidden">
+        {/* Background grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'linear-gradient(to right, #2563EB 1px, transparent 1px), linear-gradient(to bottom, #2563EB 1px, transparent 1px)',
+          backgroundSize: '40px 40px'
+        }}></div>
+
+        {/* Decorative curved line */}
+        <div className="absolute top-20 left-0 w-full h-64 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 160C240 100 480 140 720 120C960 100 1200 80 1440 100" stroke="url(#paint0_linear)" strokeWidth="3" fill="none"/>
+            <defs>
+              <linearGradient id="paint0_linear" x1="0" y1="0" x2="1440" y2="0">
+                <stop stopColor="#2563EB"/>
+                <stop offset="1" stopColor="#0EA5E9"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
               Tehnologije koje ćeš savladati
@@ -472,9 +518,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Wave Divider */}
+      <div className="relative h-20">
+        <svg className="absolute top-0 w-full h-20 text-white" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 50C360 10 720 90 1080 50C1260 30 1350 40 1440 50V100H0V50Z" fill="currentColor"/>
+        </svg>
+        <svg className="absolute top-0 w-full h-20 text-blue-50/50" viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 70C360 30 720 100 1080 60C1260 40 1350 50 1440 60V100H0V70Z" fill="currentColor"/>
+        </svg>
+      </div>
+
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container-custom">
+      <section className="py-20 bg-gradient-to-b from-blue-100/50 via-cyan-100/40 to-blue-100/50 relative overflow-hidden">
+        {/* Playful background elements */}
+        <div className="absolute top-32 right-10 w-40 h-40 bg-gradient-to-br from-blue-200/20 to-cyan-200/20 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 left-20 w-56 h-56 bg-gradient-to-tr from-cyan-200/20 to-blue-200/20 rounded-full blur-3xl"></div>
+
+        {/* Decorative dots */}
+        <div className="absolute top-20 left-10 flex gap-2">
+          <div className="w-3 h-3 rounded-full bg-blue-300/40"></div>
+          <div className="w-3 h-3 rounded-full bg-cyan-300/40"></div>
+          <div className="w-3 h-3 rounded-full bg-blue-300/40"></div>
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
               Šta kažu naši polaznici
@@ -557,9 +624,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Smooth Wave Divider */}
+      <div className="relative h-24 bg-gradient-to-b from-blue-100/50 to-white">
+        <svg className="absolute bottom-0 w-full h-24" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 0C240 40 480 80 720 80C960 80 1200 40 1440 0V120H0V0Z" fill="white"/>
+        </svg>
+      </div>
+
       {/* Learning Timeline Section */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Subtle blue accent on left */}
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-cyan-500 to-blue-500 opacity-20"></div>
+
+        {/* Floating decorative elements */}
+        <div className="absolute top-40 right-32 w-24 h-24 border-2 border-blue-100 rounded-full opacity-40"></div>
+        <div className="absolute bottom-40 right-20 w-16 h-16 bg-cyan-100 rounded-lg rotate-45 opacity-30"></div>
+
+        <div className="container-custom relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
               Tvoj put do Data Science karijere
