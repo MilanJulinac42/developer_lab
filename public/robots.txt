@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes (when they exist)
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://developer.lab/sitemap.xml

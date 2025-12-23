@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { createMetadata } from "@/lib/metadata";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,10 +10,17 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Developer.Lab - Postani Data Scientist za 12 nedelja",
-  description: "Praktični Data Science kursevi sa mentor podrškom. Python, Machine Learning, Deep Learning i AI. Brz put do posla!",
-  keywords: ["data science", "machine learning", "python", "AI", "kursevi", "edukacija"],
+export const metadata: Metadata = createMetadata({
+  title: "Developer.Lab",
+  description: "Nauči Data Science od nule do profesionalca. Python, Machine Learning, Deep Learning i više. Praktični kursevi sa sertifikatima i mentor podrškom.",
+  path: "/",
+});
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#1e3a8a',
 };
 
 export default function RootLayout({
@@ -22,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="sr" className={inter.variable}>
       <body className="font-sans">
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

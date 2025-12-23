@@ -4,11 +4,16 @@
 
 @layer base {
   body {
-    @apply bg-white text-navy antialiased;
+    @apply bg-white dark:bg-slate-900 text-navy dark:text-gray-100 antialiased transition-colors duration-300;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Dark mode color overrides */
+  .dark {
+    color-scheme: dark;
   }
 }
 
@@ -18,23 +23,23 @@
   }
 
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl;
+    @apply bg-primary hover:bg-primary-dark dark:bg-accent dark:hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl;
   }
 
   .btn-secondary {
-    @apply bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+    @apply bg-white dark:bg-slate-800 text-primary dark:text-accent border-2 border-primary dark:border-accent hover:bg-primary dark:hover:bg-accent hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
   }
 
   .btn-outline {
-    @apply border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+    @apply border-2 border-white text-white hover:bg-white hover:text-primary dark:hover:text-accent font-semibold px-6 py-3 rounded-lg transition-all duration-300;
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+    @apply bg-white dark:bg-slate-800 rounded-xl shadow-lg dark:shadow-slate-900/50 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-slate-900;
   }
 
   .card-glass {
-    @apply bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 p-6 transition-all duration-300;
+    @apply bg-white/10 dark:bg-slate-800/30 backdrop-blur-lg rounded-xl border border-white/20 dark:border-slate-700/50 p-6 transition-all duration-300;
   }
 
   .gradient-text {
@@ -50,5 +55,50 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translate(30px, -30px) scale(1.1);
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes gradient-shift-reverse {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translate(-30px, 30px) scale(1.1);
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes gradient-pulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.15;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.1;
+    }
+  }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 15s ease-in-out infinite;
+  }
+
+  .animate-gradient-shift-reverse {
+    animation: gradient-shift-reverse 20s ease-in-out infinite;
+  }
+
+  .animate-gradient-pulse {
+    animation: gradient-pulse 10s ease-in-out infinite;
   }
 }
