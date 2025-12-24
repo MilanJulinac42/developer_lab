@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { useParallax } from '@/hooks/useParallax';
 
 interface ParallaxBackgroundProps {
-  children: ReactNode;
+  children?: ReactNode;
   speed?: number;
   className?: string;
 }

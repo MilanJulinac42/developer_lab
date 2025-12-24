@@ -10,8 +10,9 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const course = getCourseBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
 
   if (!course) {
     return {
@@ -22,8 +23,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return createCourseMetadata(course);
 }
 
-export default function CoursePage({ params }: { params: { slug: string } }) {
-  const course = getCourseBySlug(params.slug);
+export default async function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
 
   if (!course) {
     notFound();
